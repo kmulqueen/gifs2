@@ -6,7 +6,7 @@ export const Header = props => {
     
 
     return (
-        <div >
+        <div className="row">
 
             
         </div>
