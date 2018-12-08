@@ -1,24 +1,30 @@
 import React, { Component } from "react";
-import PlayerList from "./PlayerList";
+import LobbyList from "./LobbyList";
 import { connect } from "react-redux";
+import { firestoreConnect } from "react-redux-firebase";
+import { compose } from "redux";
 
 class Lobby extends Component {
   render() {
-    const { lobbyPlayers } = this.props;
-    console.log(lobbyPlayers);
+    const { lobbies } = this.props;
+    console.log(lobbies);
     return (
       <div className="container">
         <h5>Lobby Page</h5>
-        <PlayerList players={lobbyPlayers} />
+        <LobbyList lobbies={lobbies} />
       </div>
     );
   }
 }
 
 const mapStateToProps = state => {
+  console.log(state);
   return {
-    lobbyPlayers: state.lobby.lobby
+    lobbies: state.firestore.ordered.lobbies
   };
 };
 
-export default connect(mapStateToProps)(Lobby);
+export default compose(
+  connect(mapStateToProps),
+  firestoreConnect([{ collection: "lobbies" }])
+)(Lobby);
