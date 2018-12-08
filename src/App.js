@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Game from "./pages/game";
 import Login from "./components/auth/login";
 import Register from "./components/auth/register";
+import Lobby from "./pages/lobby/Lobby";
 const App = () => (
   <Router>
     <div>
@@ -10,6 +11,7 @@ const App = () => (
         <Route exact path="/" component={Game} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
+        <Route exact path="/lobby" component={Lobby} />
 
         {/* <Route exact path="/get-started/:doc.id" component={GetStarted} /> */}
       </Switch>
