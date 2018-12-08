@@ -4,6 +4,7 @@ import Game from "./pages/game";
 import Login from "./components/auth/login";
 import Register from "./components/auth/register";
 import Lobby from "./pages/lobby/Lobby";
+import CreateLobby from "./pages/lobby/CreateLobby";
 const App = () => (
   <Router>
     <div>
@@ -12,6 +13,7 @@ const App = () => (
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
         <Route exact path="/lobby" component={Lobby} />
+        <Route exact path="/lobby/create" component={CreateLobby} />
 
         {/* <Route exact path="/get-started/:doc.id" component={GetStarted} /> */}
       </Switch>

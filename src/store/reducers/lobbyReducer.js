@@ -19,7 +19,16 @@ const initialState = {
 };
 
 const lobbyReducer = (state = initialState, action) => {
-  return state;
+  switch (action.type) {
+    case "CREATE_LOBBY":
+      console.log("created lobby", action.lobby);
+      return state;
+    case "CREATE_LOBBY_ERROR":
+      console.log("create lobby error:", action.err);
+      return state;
+    default:
+      return state;
+  }
 };
 
 export default lobbyReducer;
