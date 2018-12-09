@@ -2,12 +2,14 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Game from "./pages/game";
 import Login from "./components/auth/login";
+import LogOut from "./components/LogOut (IGNORE)/LogOut";
 import Register from "./components/auth/register";
 import Lobby from "./pages/lobby/Lobby";
 import CreateLobby from "./pages/lobby/CreateLobby";
 const App = () => (
   <Router>
     <div>
+      <LogOut />
       <Switch>
         <Route exact path="/" component={Game} />
         <Route exact path="/login" component={Login} />
