@@ -7,7 +7,7 @@ import { compose } from "redux";
 class Lobby extends Component {
   render() {
     const { lobbies } = this.props;
-    console.log(lobbies);
+
     return (
       <div className="container">
         <h5>Lobby Page</h5>

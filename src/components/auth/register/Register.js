@@ -1,39 +1,26 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { register } from "../../../store/actions/authActions";
 import "./Register.css";
 
 class Register extends Component {
   state = {
     email: "",
     userName: "",
-    password: "",
-    error: ""
+    password: ""
   };
-
-  dismissError = () => this.setState({ error: "" });
 
   onSubmit = evt => {
     evt.preventDefault();
 
-    if (!this.state.email) {
-      return this.setState({ error: "Email is required" });
-    }
-    if (!this.state.userName) {
-      return this.setState({ error: "Please Create a User Name" });
-    }
-
-    if (!this.state.password) {
-      return this.setState({ error: "Password is required" });
-    }
-
     // Create New User with Firebase
-
-    // Clear any errors
-    return this.setState({ error: "" });
+    this.props.register(this.state);
   };
 
   onChange = evt => this.setState({ [evt.target.name]: evt.target.value });
 
   render() {
+    const { authError } = this.props;
     return (
       <div className="container">
         <div className="row login-row col-12">
@@ -43,12 +30,6 @@ class Register extends Component {
 
           <div className="Register col-12">
             <form onSubmit={this.onSubmit}>
-              {this.state.error && (
-                <h3 data-test="error" onClick={this.dismissError}>
-                  <button onClick={this.dismissError}>✖</button>
-                  {this.state.error}
-                </h3>
-              )}
               <div className="col-12">
                 <label>Email</label>
                 <input
@@ -80,6 +61,12 @@ class Register extends Component {
                 />
               </div>
               <input type="submit" value="Sign Up" data-test="submit" />
+              {/* Check for Register Errors */}
+              {authError ? (
+                <div className="alert alert-danger" role="alert">
+                  {authError}
+                </div>
+              ) : null}
             </form>
           </div>
         </div>
@@ -87,4 +74,20 @@ class Register extends Component {
     );
   }
 }
-export default Register;
+
+const mapStateToProps = state => {
+  return {
+    authError: state.auth.authError
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    register: newUser => dispatch(register(newUser))
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Register);

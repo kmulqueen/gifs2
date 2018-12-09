@@ -26,6 +26,12 @@ const lobbyReducer = (state = initialState, action) => {
     case "CREATE_LOBBY_ERROR":
       console.log("create lobby error:", action.err);
       return state;
+    case "JOIN_LOBBY":
+      console.log("join lobby:", action.lobby);
+      return state;
+    case "JOIN_LOBBY_ERROR":
+      console.log("join lobby error:", action.err);
+      return state;
     default:
       return state;
   }
