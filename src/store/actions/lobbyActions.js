@@ -5,14 +5,13 @@ export const createLobby = lobby => {
     const firestore = getFirestore();
     const profile = getState().firebase.profile;
     const lobbyCreatorId = getState().firebase.auth.uid;
+    // Creating firestore lobby document
     firestore
       .collection("lobbies")
       .add({
         ...lobby,
         createdBy: profile.userName,
         creatorId: lobbyCreatorId,
-        // lobbyId: docRef.id,
-        // Will need to get all players in lobby
         players: [profile.userName],
         // Whether or not the lobby is "joinable"
         open: true,
@@ -29,10 +28,10 @@ export const createLobby = lobby => {
 };
 
 export const joinLobby = lobby => {
-  console.log("lobby", lobby);
   return (dispatch, getState, { getFirebase, getFirestore }) => {
     const firestore = getFirestore();
     const profile = getState().firebase.profile;
+    // Updating the players array with players who have joined lobby
     firestore
       .collection("lobbies")
       .doc(lobby)
@@ -51,3 +50,5 @@ export const joinLobby = lobby => {
       });
   };
 };
+
+// @todo: lobbyStatus change to open or closed depending on how many players are in the lobby

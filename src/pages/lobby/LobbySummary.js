@@ -19,20 +19,33 @@ const LobbySummary = ({ lobby, joinLobby }) => {
         <div className="card-body">
           <h5 className="card-title">{lobby.lobbyName}</h5>
           <p className="card-text">Created By: {lobby.createdBy}</p>
-          {lobby.open ? <p>Status: Open</p> : <p>Status: Closed</p>}
-          {/* Eventually need to loop through players in lobby and then display them rather than the first index of every lobby */}
-
+          {/* Figure out how to change status if x amount of players are in lobbyPlayers */}
+          {lobby.open ? (
+            <p>
+              Status:{" "}
+              <span className="text-success font-weight-bold">Open</span>
+            </p>
+          ) : (
+            <p>
+              Status:{" "}
+              <span className="text-danger font-weight-bold">Closed</span>
+            </p>
+          )}
+          {/* If there's players, then render lobbyPlayers onto DOM */}
           {lobby.players ? (
             <p className="card-text">Players: {lobbyPlayers}</p>
           ) : null}
-          <a
-            href="#"
-            onClick={onClick}
-            id={lobby.id}
-            className="btn btn-primary"
-          >
-            Join
-          </a>
+          {/* If lobby is closed, don't render a join button */}
+          {lobby.open ? (
+            <a
+              href="#"
+              onClick={onClick}
+              id={lobby.id}
+              className="btn btn-primary"
+            >
+              Join
+            </a>
+          ) : null}
         </div>
       </div>
     </div>
