@@ -1,1 +1,1 @@
-export * from "./GifCard";
+export {default} from "./GifCard";
