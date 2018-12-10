@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Game from "./pages/game";
+import Game from "./pages/Game";
 import Login from "./components/auth/login";
 import LogOut from "./components/LogOut (IGNORE)/LogOut";
 import Navbar from "./components/Navbar/Navbar";
