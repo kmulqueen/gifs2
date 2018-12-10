@@ -7,7 +7,7 @@ export const Main = props => {
 
     return (
         <div >
-
+<Navbar />
             
         </div>
 
