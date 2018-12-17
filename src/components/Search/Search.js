@@ -26,7 +26,7 @@ class Search extends Component {
         this.setState({
           gifs: res.data.data
         });
-        console.log("gifs:", gifs);
+        console.log("gifs:", this.state.gifs);
       })
       .catch(err => console.log(err));
   };

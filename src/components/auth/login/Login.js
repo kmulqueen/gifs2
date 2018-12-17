@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { logIn } from "../../../store/actions/authActions";
-import "./Login.css";
+
 
 class Login extends Component {
   state = {
@@ -23,33 +23,44 @@ class Login extends Component {
     return (
       <div className="container">
         <div className="row login-row col-12">
-          <div className="col-12">
-            <h1>Log In</h1>
-          </div>
 
-          <div className="Login col-12">
+
+          <div className="Login col-5">
+            <h2> Create New User</h2>
             <form onSubmit={this.onSubmit}>
-              <div className="col-12">
-                <label>Email</label>
-                <input
-                  type="email"
-                  data-test="email"
-                  name="email"
-                  value={this.state.email}
-                  onChange={this.onChange}
-                />
+              <div className="row">
+                <div className="col-12 login-e">
+                  {/* <label className="col-4">Email</label> */}
+                  <input className="col-8"
+                  placeholder="Email"
+                    type="email"
+                    data-test="email"
+                    name="email"
+                    value={this.state.email}
+                    onChange={this.onChange}
+                  />
+                </div>
+                <div className="col-12 login-e">
+                  {/* <label className="col-4">Password</label> */}
+                  <input className="col-8"
+                    placeholder="Password"
+                    type="password"
+                    data-test="password"
+                    name="password"
+                    value={this.state.password}
+                    onChange={this.onChange}
+                  />
+                </div>
+                <div className="col-12">
+                <button type="submit" value="Log In" data-test="submit">Create New User</button>
+                </div>
+                <div className="col-12">
+                <a href="#">Already have a login?</a>
+                </div>
+              
               </div>
-              <div className="col-12">
-                <label>Password</label>
-                <input
-                  type="password"
-                  data-test="password"
-                  name="password"
-                  value={this.state.password}
-                  onChange={this.onChange}
-                />
-              </div>
-              <input type="submit" value="Log In" data-test="submit" />
+
+              
               {/* Check for Login Errors */}
               {authError ? (
                 <div className="alert alert-danger" role="alert">

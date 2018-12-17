@@ -1,0 +1,85 @@
+$mainColor: #2b2b2b;
+$secondColor: white;
+$thirdColor:grey;
+$lightGrey:#f0f0f0;
+$center:0 auto;
+$font: 'Helvetica', 'Arial', sans-serif !important;
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+
+body{
+  background-image:url('/images/dark_wall.png');
+  background-repeat: repeat;
+  font-family: $font;
+}
+.navbar{
+  background-color: $mainColor;
+  
+  a{
+    color:$secondColor;
+  }
+}
+
+.login-row{
+  margin: 0 auto;
+  text-align: center;
+  
+}
+.Login{
+  background-color:$secondColor;
+
+  margin:$center;
+  margin-top:200px;
+  padding:40px;
+  font-family:$font;
+  border-radius:10px;
+  @include box-shadow(0px,25px,80px, #000);
+  .login-e{
+    padding:3px;
+    height:40px;
+    
+    
+  }
+  h2{
+    font-family: $font;
+    padding:20px;
+    margin:10px;
+  }
+  label{
+    float:left;
+    text-align:left;
+  }
+  input{
+    border:none;
+    background-color:$lightGrey;
+    border-radius:5px;
+    padding:5px 5px 5px 10px;
+    
+    
+    
+    // border-bottom: 1px solid;
+  }
+  button{
+    background-color:$mainColor;
+    color:$secondColor;
+    padding:10px 20px;
+    border-radius:5px;
+    border:none;
+    margin:20px 0 10px;
+    
+    
+  }
+  a{
+    color:$thirdColor;
+  }
+}

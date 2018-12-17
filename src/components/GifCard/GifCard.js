@@ -24,7 +24,7 @@ const GifCard = props => {
     // <AppContext.Consumer>
     // {({ src }) => <img src={src} />}
 
-    <img src={props.src} id={props.key} alt="GifCard" className="col-2 gif" />
+    <img src={props.src} id={props.key} alt="GifCard" className="col-1 gif" />
 
     // </AppContext.Consumer>
   );
