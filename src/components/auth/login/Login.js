@@ -26,7 +26,7 @@ class Login extends Component {
 
 
           <div className="Login col-5">
-            <h2> Create New User</h2>
+            <h2> Login</h2>
             <form onSubmit={this.onSubmit}>
               <div className="row">
                 <div className="col-12 login-e">
@@ -52,7 +52,7 @@ class Login extends Component {
                   />
                 </div>
                 <div className="col-12">
-                <button type="submit" value="Log In" data-test="submit">Create New User</button>
+                <button type="submit" value="Log In" data-test="submit">Login</button>
                 </div>
                 <div className="col-12">
                 <a href="#">Already have a login?</a>
