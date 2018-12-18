@@ -15,7 +15,7 @@ class Search extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    const { gifs, search } = this.state;
+    const { search } = this.state;
     // axios get request to giphy
     axios
       .get(
@@ -58,6 +58,7 @@ class Search extends Component {
             <GifCard src={gif.images.downsized_medium.url} key={gif.id} />
           ))}
         </div>
+        <button>Choose this Gif</button>
       </div>
     );
   }

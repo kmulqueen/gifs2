@@ -22,13 +22,33 @@ body{
   background-repeat: repeat;
   font-family: $font;
 }
-.navbar{
-  background-color: $mainColor;
-  
-  a{
+.container-fluid{
+  padding-left:0px;
+    padding-right:0px;
     color:$secondColor;
+  .navbar{
+    background-color: $mainColor;
+    width:100%;
+    
+    @include box-shadow(0px,2px,50px, #000);
+  
+    a{
+      color:$secondColor;
+    }
+    .navbar-collapse{
+      float:right;
+      justify-content: flex-end;
+      .navbar-nav{
+        float:right;
+        
+        .nav-item{
+          text-align: right;
+        }
+      }
+    }
   }
 }
+
 
 .login-row{
   margin: 0 auto;
@@ -82,4 +102,21 @@ body{
   a{
     color:$thirdColor;
   }
+}
+.question-button{
+  border-radius:8px;
+  border:none;
+  background-color: $secondColor;
+  margin: 0 auto;
+  padding:10px;
+  top:20px;
+  font-size:24px;
+  font-family: $font;
+  
+}
+.question{
+  text-align: center;
+  margin:20px 0;
+  font-size:28px;
+
 }
