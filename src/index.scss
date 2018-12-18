@@ -35,6 +35,17 @@ body{
     a{
       color:$secondColor;
     }
+    .navbar-collapse{
+      float:right;
+      justify-content: flex-end;
+      .navbar-nav{
+        float:right;
+        
+        .nav-item{
+          text-align: right;
+        }
+      }
+    }
   }
 }
 
@@ -91,4 +102,21 @@ body{
   a{
     color:$thirdColor;
   }
+}
+.question-button{
+  border-radius:8px;
+  border:none;
+  background-color: $secondColor;
+  margin: 0 auto;
+  padding:10px;
+  top:20px;
+  font-size:24px;
+  font-family: $font;
+  
+}
+.question{
+  text-align: center;
+  margin:20px 0;
+  font-size:28px;
+
 }
