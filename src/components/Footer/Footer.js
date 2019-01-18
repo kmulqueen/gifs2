@@ -14,15 +14,16 @@ class Footer extends Component {
             <div className="wins" />
           </div>
         </div>
-        <div className="col-9 right-side">
-          <div className="col-12 search-area">
+        <div className="col-10 right-side">
+          <div className=" search-area">
             <Search />
           </div>
-          <div className="col-12 gifs">
-            <GifCard />
+          
+            
+            
           </div>
         </div>
-      </div>
+      
     );
   }
 }
