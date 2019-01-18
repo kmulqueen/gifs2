@@ -41,9 +41,9 @@ class Search extends Component {
   render() {
     return (
       <div className="container">
-        <form className="row col-12" onSubmit={this.handleSubmit}>
+        <form className="row search-form" onSubmit={this.handleSubmit}>
           <input
-            className="col-8"
+            className="col-7"
             type="text"
             placeholder="Search.."
             name="search"
@@ -53,12 +53,18 @@ class Search extends Component {
             Submit
           </button>
         </form>
-        <div className="row col-12">
+        <div className="gif-container row col-9">
+        <div className="gifs">
+          <div className="arrow-gifs row">
+    {/* <button>left</button> */}
           {this.state.gifs.map(gif => (
             <GifCard src={gif.images.downsized_medium.url} key={gif.id} />
           ))}
+          {/* <button>right</button> */}
+    </div>
+    </div>
         </div>
-        <button>Choose this Gif</button>
+        
       </div>
     );
   }

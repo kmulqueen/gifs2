@@ -120,3 +120,60 @@ body{
   font-size:28px;
 
 }
+
+  .gif-box{
+    margin:10px 10px 100px;
+    
+    width:100px;
+    height:100px;
+    background-color:#000;
+
+    
+    img.gif{
+      padding-left: 0px !important;
+    padding-right:0px !important;
+      width:100%;
+      height: auto;
+      margin-bottom:100px;
+
+      
+
+    }
+    
+  }
+
+.search-area{
+  margin-top:10px;
+  .search-form{
+    width:75%;
+    float:right;
+    input{
+     margin-right:10px;
+    }
+    button{
+      float:right;
+    }
+    
+
+  }
+}
+.gif-container{
+  float:right;
+  margin-bottom:10px;
+  .gifs {
+    margin: 0 auto;
+    .arrow-gifs.row{
+      button{
+        height:30px;
+      }
+      
+    }
+  }
+  
+}
+
+
+.footer{
+  height:220px;
+
+}
