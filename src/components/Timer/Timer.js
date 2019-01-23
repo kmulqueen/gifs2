@@ -1,33 +1,10 @@
 import React, { Component } from "react";
 import axios from "axios";
-import {Timer} from "../Timer";
 
-class Questions extends Component {
-  state = {
-    questionBank: [],
-    question: "",
-    time: 30,
-    timerIsOn: false
-  };
+class Timer extends Component {
+  
 
-  //   var questionButton = document.getElementById("question-button");
-  // questionButton.onclick() = function(){
-  //    questionButton.style.display = none;
-  // }
-
-  // Generate new question
-  setQuestion = () => {
-    const { questionBank } = this.state;
-    // Create a random index so that each question is drawn at random
-    const randomIndex = Math.floor(Math.random() * (questionBank.length + 1));
-    // Set state of question to the randomly chosen question from the bank
-    this.setState({
-      question: questionBank[randomIndex].text
-    });
-    var questionButton = document.getElementById("question-button");
-    questionButton.style.display = "none";
-    // @todo Update lobby question to blackcards.text
-  };
+ 
 
   // Start timer
   startTimer = () => {
@@ -86,18 +63,10 @@ class Questions extends Component {
 
   render() {
     return (
-      <div className="container row">
-        <button
-          id="question-button"
-          className="question-button col-3"
-          onClick={this.onClick}
-        >
-          New Question?
-        </button>
+      
         <h1>Time: {this.state.time}</h1>
-        <div className="col-12 question">{this.state.question}</div>
-      </div>
+        
     );
   }
 }
-export default Questions;
+export default Timer;
