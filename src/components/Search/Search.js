@@ -38,6 +38,11 @@ class Search extends Component {
     });
   };
 
+  gifClick = e => {
+    console.log("gif clicked");
+    console.log(e.target.src);
+  };
+
   render() {
     return (
       <div className="container">
@@ -54,17 +59,20 @@ class Search extends Component {
           </button>
         </form>
         <div className="gif-container row col-9">
-        <div className="gifs">
-          <div className="arrow-gifs row">
-    {/* <button>left</button> */}
-          {this.state.gifs.map(gif => (
-            <GifCard src={gif.images.downsized_medium.url} key={gif.id} />
-          ))}
-          {/* <button>right</button> */}
-    </div>
-    </div>
+          <div className="gifs">
+            <div className="arrow-gifs row">
+              {/* <button>left</button> */}
+              {this.state.gifs.map(gif => (
+                <GifCard
+                  src={gif.images.downsized_medium.url}
+                  key={gif.id}
+                  gifClick={this.gifClick}
+                />
+              ))}
+              {/* <button>right</button> */}
+            </div>
+          </div>
         </div>
-        
       </div>
     );
   }
