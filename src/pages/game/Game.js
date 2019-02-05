@@ -21,40 +21,44 @@ class Game extends Component {
   };
 
   //=========== TIMER FUNCTIONS ===========//
-  // Start Timer
+  // Start Game Timer
   startTimer = () => {
+    console.log("start timer ran.");
+    this.setState({
+      timerIsOn: true,
+      time: this.state.time
+    });
     this.timer = setInterval(
       () =>
         this.setState({
-          timerIsOn: true,
           time: this.state.time - 1
         }),
       1000
     );
+    this.timeRec = setInterval(() => {
+      if (this.state.time === 0) {
+        this.stopTimer();
+      }
+    }, 1000);
   };
 
-  // Stop timer
+  // Stop Game Timer
   stopTimer = () => {
+    console.log("stop timer ran.");
     this.setState({
       timerIsOn: false,
       time: "Time's Up!"
     });
     clearInterval(this.timer);
-    console.log(
-      "stop Timer.",
-      "timer:",
-      this.timer,
-      "time state:",
-      this.state.time
-    );
+    clearInterval(this.timeRec);
   };
 
-  // Reset timer
+  // Reset Game Timer
   resetTimer = () => {
+    console.log("reset timer ran.");
     this.setState({
       time: 30
     });
-    console.log("reset Timer.");
   };
 
   //=========== QUESTION FUNCTION ===========//
@@ -73,23 +77,22 @@ class Game extends Component {
   };
 
   //=========== START ROUND FUNCTION ===========//
-  // Start Round
+  // Start Round (Generate Question & Start Timer)
   startRound = () => {
+    console.log("start round ran");
     this.startTimer();
     this.setQuestion();
   };
 
   //=========== GIF SEARCH & CLICK FUNCTIONS ===========//
-  // Gif Click
-  gifClick = e => {
-    console.log("gif clicked");
-    console.log(e.target.src);
+  // Handle Gif Search Input
+  handleInput = e => {
     this.setState({
-      submission: e.target.src
+      [e.target.name]: e.target.value
     });
   };
 
-  // Handle Submit
+  // Handle Gif Search Submit
   handleSubmit = e => {
     e.preventDefault();
     const { search } = this.state;
@@ -108,10 +111,12 @@ class Game extends Component {
       .catch(err => console.log(err));
   };
 
-  // Handle Input
-  handleInput = e => {
+  // Set state of user's submission when they click a gif to submit
+  gifClick = e => {
+    console.log("gif clicked");
+    console.log(e.target.src);
     this.setState({
-      [e.target.name]: e.target.value
+      submission: e.target.src
     });
   };
 
@@ -142,7 +147,6 @@ class Game extends Component {
         <Main submission={this.state.submission} />
         <Footer
           timer={this.state.time}
-          stopTimer={this.stopTimer}
           submission={this.state.submission}
           search={this.state.search}
           handleInput={this.handleInput}

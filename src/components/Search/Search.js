@@ -33,14 +33,14 @@ const Search = props => {
         </Col>
         <Col md="2">
           <Button type="submit" onClick={props.handleSubmit}>
-            Submit
+            Search
           </Button>
         </Col>
       </Row>
       <Row>
         <Col id="gif-container">
           <div id="gifs">
-            <div class="arrow-gifs">
+            <div className="arrow-gifs">
               {props.gifs.map(gif => (
                 <GifCard
                   src={gif.images.downsized_medium.url}
