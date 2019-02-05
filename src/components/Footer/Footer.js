@@ -1,25 +1,28 @@
 import React from "react";
 import Search from "../Search";
 import Timer from "../Timer";
+import { Container, Col, Row } from 'reactstrap';
 
 const Footer = props => {
   return (
-    <div className="footer">
-      <div className="container">
-        <div className="col-2 left-side">
-          <Timer time={props.timer} stopTimer={props.stopTimer} />
-          <div className="points">
-            <div className="losses" />
-            <div className="wins" />
-          </div>
-        </div>
-        <div className="col-10 right-side">
-          
+    
+      <Container id="footer">
+        <Row>
+          <Col md={{size:2, offset:1}}class="left-side">
+            <Timer time={props.timer} stopTimer={props.stopTimer} />
+            <div class="points">
+              <div class="losses" />
+              <div class="wins" />
+            </div>
+          </Col>
+          <Col md={{size: 8}} class="col-10 right-side">
+
             <Search />
-          
-        </div>
-      </div>
-    </div>
+
+          </Col>
+        </Row>
+      </Container>
+    
   );
 };
 

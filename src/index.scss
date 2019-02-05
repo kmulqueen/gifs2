@@ -103,71 +103,56 @@ body{
     color:$thirdColor;
   }
 }
-.question-button{
+
+/*Question Portion*/
+
+#question-button{
   border-radius:8px;
   border:none;
   background-color: $secondColor;
-  margin: 0 auto;
-  padding:10px;
+  margin: 20px auto;
+  padding:10px 20px;
   top:20px;
   font-size:24px;
   font-family: $font;
-  
+  color:$mainColor;
+  top:20px;
 }
-.question{
+#question{
   text-align: center;
-  margin:20px 0;
+  
   font-size:28px;
 
 }
+/* Gif Card */
 
-  .gif-box{
-    margin:10px 10px 100px;
-    
+  #gif-box.container{
+    margin:10px 10px;
     width:100px;
     height:100px;
     background-color:#000;
-
-    
-    img.gif{
+    img.media{
       padding-left: 0px !important;
-    padding-right:0px !important;
+      padding-right:0px !important;
       width:100%;
       height: auto;
-      margin-bottom:100px;
-
       
-
     }
     
   }
 
-// .search-area{
-//   margin-top:10px;
-//   
-    
 
-//   }
-// }
-.gif-container{
-  float:right;
-  margin-bottom:10px;
-  .gifs {
-    margin: 0 auto;
-    .arrow-gifs.row{
-      button{
-        height:30px;
-      }
-      
-    }
-  }
-  
-}
+
 
 .timer{
   font-size:34px;
   font-weight:bold;
   text-align:center;
+  margin-top:20px;
+}
+/* Search Bar */
+
+#search{
   margin-top:20px;
 }
 .search-form{
@@ -185,23 +170,33 @@ body{
         }
 
 }
+#gif-container{
+  float:right;
+  margin-bottom:10px;
+  #gifs {
+    margin: 0 auto;
+    
+  }
+  
+}
 
-.footer{
-  height:220px;
-  background-color:$thirdColor;
-  bottom:0;
-  position: absolute;
-  width:100%;
-  .container{
-    .col-2.left-side{
+/*Footer Code */
+  
+    #footer.container{
+      height:180px;
+      background-color:$thirdColor;
+      bottom:0;
+      position: absolute;
+      width:100%;
+      max-width:100%;
+    .left-side{
       float:left;
       
     }
-    .col-10.right-side{
+    .right-side{
       float:right;
       
     }
     
   }
   
-}

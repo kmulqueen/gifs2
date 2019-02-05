@@ -1,4 +1,5 @@
 import React from "react";
+import { Container,Media } from 'reactstrap';
 // const AppContext = React.createContext(null);
 
 const GifCard = props => {
@@ -6,15 +7,15 @@ const GifCard = props => {
     // <AppContext.Consumer>
     // {({ src }) => <img src={src} />}
 
-    <div className="gif-box ">
-      <img
+    <Container id="gif-box">
+      <Media
         src={props.src}
         id={props.key}
         alt="GifCard"
-        className=" gif"
+        class="gif"
         onClick={props.gifClick}
       />
-    </div>
+    </Container>
 
     // </AppContext.Consumer>
   );

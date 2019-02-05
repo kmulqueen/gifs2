@@ -1,19 +1,25 @@
 import React from "react";
+import { Container, Col, Row, Button } from 'reactstrap';
 
 const Questions = props => {
   return (
-    <div>
-      <div className="container-fluid row">
-        <button
+
+    <Container>
+      <Row>
+        <Button md="3"
           id="question-button"
-          className="question-button col-3"
+          class="question-button "
           onClick={props.startRound}
         >
           New Question?
-        </button>
-        <div className="col-12 question">{props.question}</div>
-      </div>
-    </div>
+        </Button>
+      </Row>
+      <Row>
+        <Col md="12" id="question">{props.question}
+        </Col>
+      </Row>
+    </Container>
+
   );
 };
 

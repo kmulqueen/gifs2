@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Button, Form, FormGroup, Label, Input, FormText, Row, Col, Container } from 'reactstrap';
 import { search } from "../../store/actions/searchActions";
 import { connect } from "react-redux";
 import { apiKey } from "../../config/giphyConfig";
-
 import GifCard from "../GifCard/GifCard";
 const AppContext = React.createContext(null);
+
 
 class Search extends Component {
   state = {
@@ -45,35 +46,42 @@ class Search extends Component {
 
   render() {
     return (
-      <div className="container">
-        <form className="row search-form" onSubmit={this.handleSubmit}>
-          <input
-            className="col-7"
-            type="text"
-            placeholder="Search.."
-            name="search"
-            onChange={this.handleInput}
-          />
-          <button className="col-4" type="submit">
-            Submit
-          </button>
-        </form>
-        <div className="gif-container row col-9">
-          <div className="gifs">
-            <div className="arrow-gifs row">
-              {/* <button>left</button> */}
-              {this.state.gifs.map(gif => (
-                <GifCard
-                  src={gif.images.downsized_medium.url}
-                  key={gif.id}
-                  gifClick={this.gifClick}
+      <Container id="search">
+        <Row>
+          <Col md={{ size: 8, offset: 2 }}>
+            <Form class="search-form" onSubmit={this.handleSubmit}>
+              <FormGroup>
+                <Input
+                  type="text"
+                  placeholder="Search.."
+                  name="search"
+                  onChange={this.handleInput}
                 />
-              ))}
-              {/* <button>right</button> */}
+              </FormGroup>
+            </Form>
+          </Col>
+          <Col md="2">
+            <Button type="submit" onClick={this.handleSubmit}>
+              Submit
+            </Button>
+          </Col>
+        </Row>
+        <Row>
+          <Col id="gif-container">
+            <div id="gifs">
+              <div class="arrow-gifs">
+                {this.state.gifs.map(gif => (
+                  <GifCard
+                    src={gif.images.downsized_medium.url}
+                    key={gif.id}
+                    gifClick={this.gifClick}
+                  />
+                ))}
+              </div>
             </div>
-          </div>
-        </div>
-      </div>
+          </Col>
+        </Row>
+      </Container>
     );
   }
 }
