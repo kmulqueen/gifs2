@@ -14,9 +14,15 @@ const Footer = props => {
           </div>
         </div>
         <div className="col-10 right-side">
-          
-            <Search />
-          
+          <Search
+            submission={props.submission}
+            search={props.search}
+            onSubmit={props.handleSubmit}
+            handleInput={props.handleInput}
+            handleSubmit={props.handleSubmit}
+            gifs={props.gifs}
+            gifClick={props.gifClick}
+          />
         </div>
       </div>
     </div>

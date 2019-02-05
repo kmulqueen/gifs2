@@ -1,23 +1,15 @@
-import React, { Component } from "react";
-import Questions from "../../components/Questions/Questions";
-import axios from "axios";
+import React from "react";
 
-class Main extends Component {
-  render() {
-    return (
-      <div className="container">
-        <Questions />
-
-        <div className="row col-12">
-          <div className="col-4 user-choice">Box</div>
-          <div className="col-4 user-choice">Box</div>
-          <div className="col-4 user-choice">Box</div>
-          <div className="col-4 user-choice">Box</div>
-          <div className="col-4 user-choice">Box</div>
-          <div className="col-4 user-choice">Box</div>
+const Main = props => {
+  return (
+    <div className="container">
+      <div className="row col-12">
+        <div className="col-4 user-choice">
+          <img src={props.submission} alt={props.submission} />
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
+
 export default Main;
