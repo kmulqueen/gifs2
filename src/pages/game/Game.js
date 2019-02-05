@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Questions from "../../components/Questions/Questions";
 import axios from "axios";
 import Footer from "../../components/Footer";
-import Navbar from "../../components/Navbar/Navbar";
+import NavBar from "../../components/NavBar/NavBar";
 
 class Game extends Component {
   state = {
@@ -88,7 +88,7 @@ class Game extends Component {
   render() {
     return (
       <div className="container-fluid">
-        <Navbar />
+        <NavBar />
         <Questions
           question={this.state.question}
           questionBank={this.state.questionBank}

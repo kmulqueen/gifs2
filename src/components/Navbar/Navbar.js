@@ -1,25 +1,58 @@
 import React from "react";
+import {
+  Button,
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem
+} from 'reactstrap';
 
+export default class NavBar extends React.Component {
+  constructor(props) {
+    super(props);
 
-const Navbar = () => (
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      isOpen: false
+    };
+  }
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
+  render() {
+    return (
+      <div>
+        <Navbar expand="lg" dark>
+          <NavbarBrand md="4" href="#">User Name/Image
+          </NavbarBrand>
+          <NavbarToggler onClick={this.toggle} />
+          {/* <NavBarToggler class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <NavbarToggler class="navbar-toggler-icon"></NavbarToggler>
+          </NavBarToggler> */}
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav className="ml-auto" navbar>
+              <NavItem>
+                <NavLink href="#">Register
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink class="nav-link" href="#">Login
+            </NavLink>
+              </NavItem>
+            </Nav>
+          </Collapse>
+        </Navbar>
+      </div>
+    );
 
-
-  <nav className="navbar navbar-expand-lg ">
-    <a className="navbar-brand col-4" href="#">User Name/Image</a>
-    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
-    </button>
-    <div className="collapse navbar-collapse row col-8" id="navbarNav">
-      <ul className="navbar-nav ">
-        <li className="nav-item active ">
-          <a className="nav-link" href="#">Register<span className="sr-only">(current)</span></a>
-        </li>
-        <li className="nav-item ">
-          <a className="nav-link" href="#">Login</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-
-);
-export default Navbar;
+  }
+}

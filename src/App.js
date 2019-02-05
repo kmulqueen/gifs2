@@ -3,10 +3,11 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Game from "./pages/Game/Game";
 import Login from "./components/auth/login";
 import LogOut from "./components/LogOut (IGNORE)/LogOut";
-
 import Register from "./components/auth/register";
 import Lobby from "./pages/lobby/Lobby";
 import CreateLobby from "./pages/lobby/CreateLobby";
+
+
 
 const App = () => (
   <Router>
