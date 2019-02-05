@@ -3,7 +3,7 @@ import React from "react";
 const Questions = props => {
   return (
     <div>
-      <div className="container row">
+      <div className="container-fluid row">
         <button
           id="question-button"
           className="question-button col-3"

@@ -5,7 +5,7 @@ const Timer = props => {
     // props.stopTimer();
     return <div>Time's Up!</div>;
   } else {
-    return <div>Time: {props.time}</div>;
+    return <div className="timer">TIME<br/>{props.time}</div>;
   }
 };
 
