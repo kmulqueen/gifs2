@@ -8,7 +8,7 @@ const Footer = props => {
     <Container id="footer">
       <Row>
         <Col md={{ size: 2, offset: 1 }} class="left-side">
-          <Timer time={props.timer} stopTimer={props.stopTimer} />
+          <Timer time={props.timer} />
           <div class="points">
             <div class="losses" />
             <div class="wins" />
